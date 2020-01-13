@@ -15,10 +15,10 @@
 
 ## Mysql Setup
 
-    First, you need to create a mysql database - **treez_development**.
-    There are **treez_development_inventory.sql** and **treez_development_order.sql** files in this project. You can migrate this file to backup tables.
+    First, you need to create a mysql database - #####treez_development#####.
+    There are #####treez_development_inventory.sql##### and #####treez_development_order.sql##### files in this project. You can migrate this file to backup tables.
 
-    To connect database you need to create or edit **.env.development** for mysql configuration.
+    To connect database you need to create or edit #####.env.development##### for mysql configuration.
 
     MYSQL_USER=your user
     MYSQL_PASSWORD=your password
@@ -26,8 +26,8 @@
     MYSQL_PORT=3306
     MYSQL_DB=treez_development
 
-    And edit the **config/datastores.js** file by using your mysql the username and password, etc
-        example: **url: "mysql://root:password@localhost:3306/treez_development"**
+    And edit the #####config/datastores.js##### file by using your mysql the username and password, etc
+        example: #####url: "mysql://root:password@localhost:3306/treez_development"#####
 
 ## Endpoint
 
