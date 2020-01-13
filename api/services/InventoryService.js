@@ -79,7 +79,7 @@ module.exports = {
       Inventory.findOne({ id: id })
         .then(_inventory => {
           var data = {};
-          data.quantity = _inventory.quantity - 1;
+          data.quantity = _inventory.quantity + 1;
           Inventory.update({ id: id })
             .set(data)
             .meta({ fetch: true })
@@ -98,7 +98,7 @@ module.exports = {
       Inventory.findOne({ id: id })
         .then(_inventory => {
           var data = {};
-          data.quantity = _inventory.quantity + 1;
+          data.quantity = _inventory.quantity - 1;
           Inventory.update({ id: id })
             .set(data)
             .meta({ fetch: true })
