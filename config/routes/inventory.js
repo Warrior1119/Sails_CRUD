@@ -3,7 +3,7 @@
 module.exports.routes = {
   "POST /inventories": "inventory/create",
   "GET /inventories": "inventory/find",
-  "GET /inventory/:id": "inventory/findOne",
+  "GET /inventories/:id": "inventory/findOne",
   "PUT /inventories/:id": "inventory/update",
-  "DELETE /inventory/:id": "inventory/delete"
+  "DELETE /inventories/:id": "inventory/destroy"
 };

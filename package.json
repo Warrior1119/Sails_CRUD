@@ -5,16 +5,16 @@
   "description": "App_for_client",
   "dependencies": {
     "async": "2.0.1",
+    "cron": "^1.7.2",
     "express-session": "^1.16.2",
     "firebase-admin": "5.13.0",
-    "html-entities": "1.2.1",
-    "html-pdf": "2.1.0",
     "jsdom": "11.1.0",
     "jsonwebtoken": "7.4.2",
     "lodash": "3.10.1",
+    "nodemon": "^2.0.2",
     "sails": "1.0.0-34",
     "sails-hook-orm": "2.0.0-16",
-    "sails-mysql": "1.0.0-13",
+    "sails-mysql": "^1.0.1",
     "winston": "2.4.0",
     "winston-daily-rotate-file": "1.7.2"
   },
@@ -31,11 +31,7 @@
   },
   "scripts": {
     "start": "NODE_ENV=development nodemon app.js",
-    "test": "PORT=1338 ./node_modules/mocha/bin/mocha test/lifecycle.test.js test/**/*.test.js --reporter spec -t 600000",
-    "test-i": "PORT=1339 ./node_modules/mocha/bin/mocha test/lifecycle.test.js test/integration/**/*.test.js --reporter spec -t 600000",
-    "test-u": "PORT=1340 ./node_modules/mocha/bin/mocha test/lifecycle.test.js test/unit/**/*.test.js --reporter spec -t 600000",
     "lint": "PORT=1338 node ./node_modules/eslint/bin/eslint . --max-warnings=0",
-    "docs": "node node_modules/jsdoc/jsdoc.js api -c conf.json -t ./node_modules/ink-docstrap/template",
     "debug": "node debug app.js"
   },
   "main": "app.js",

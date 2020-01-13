@@ -14,7 +14,6 @@
  */
 
 module.exports.datastores = {
-
   /***************************************************************************
    *                                                                          *
    * Your app's default datastore.                                            *
@@ -32,7 +31,6 @@ module.exports.datastores = {
    ***************************************************************************/
 
   default: {
-
     /***************************************************************************
      *                                                                          *
      * Want to use a different database during development?                     *
@@ -47,9 +45,7 @@ module.exports.datastores = {
      *    (See https://sailsjs.com/config/datastores for help.)                 *
      *                                                                          *
      ***************************************************************************/
-    adapter: 'sails-mysql',
-    url: 'mysql://root:password@localhost:3306/elevatedliving_staging',
-
+    adapter: "sails-mysql",
+    url: "mysql://root:password@localhost:3306/treez_development"
   }
-
 };

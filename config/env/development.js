@@ -1,11 +1,10 @@
-'use strict';
+"use strict";
 
 // Require our custom logger.
-const winston = require('winston');
-require('winston-daily-rotate-file');
+const winston = require("winston");
+require("winston-daily-rotate-file");
 
 module.exports = {
-
   blueprints: {
     shortcuts: false,
     actions: false,
@@ -13,30 +12,6 @@ module.exports = {
   },
 
   custom: {
-    // Define JWT's secret.
-    jwtSecret: process.env.JWT_SECRET,
-    // Define Mail's configuration.
-    mail: {
-      from: process.env.MAIL_FROM,
-      smtp: {
-        host: process.env.MAIL_SMTP_HOST,
-        port: process.env.MAIL_SMTP_PORT,
-        login: process.env.MAIL_SMTP_LOGIN,
-        password: process.env.MAIL_SMTP_PASSWORD
-      },
-      activate: process.env.MAIL_ACTIVATE,
-      password: process.env.MAIL_PASSWORD
-    },
-    // Define Redis's configuration.
-    redis: {
-      host: process.env.REDIS_HOST,
-      port: process.env.REDIS_PORT
-    },
-    // Define Stripe's configuration.
-    stripe: {
-      apiKey: process.env.STRIPE_API_KEY,
-      apiVer: process.env.STRIPE_API_VER
-    },
     // Define timestamps.
     timestamps: {
       tenMinutes: 10 * 60 * 1000,
@@ -51,7 +26,7 @@ module.exports = {
   datastores: {
     default: {
       // Configure adapter.
-      adapter: require('sails-mysql'),
+      adapter: require("sails-mysql"),
       user: process.env.MYSQL_USER,
       password: process.env.MYSQL_PASSWORD,
       host: process.env.MYSQL_HOST,
@@ -69,52 +44,20 @@ module.exports = {
 
   http: {},
 
-  log: {
-    level: 'debug',
-    inspect: false,
-    custom: new winston.Logger({
-      transports: [
-        new (winston.transports.Console)({
-          level: 'debug',
-          json: false,
-          colorize: true
-        })
-      ]
-    })
-  },
-
-  logDelete: new winston.Logger({
-    transports: [
-      new winston.transports.DailyRotateFile({
-        level: 'warn',
-        filename: './logs/delete.log',
-        json: false,
-        colorize: false,
-        datePattern: 'yyyy-MM-dd.',
-        prepend: true
-      })
-    ]
-  }),
-
   models: {
-    migrate: 'safe'
+    migrate: "safe"
   },
 
   security: {
     // Cross-Origin Resource Sharing.
     cors: {
       allRoutes: true,
-      allowOrigins:'*',
+      allowOrigins: "*",
       allowCredentials: false,
-      allowRequestHeaders: 'content-type,token'
+      allowRequestHeaders: "content-type,token"
     },
 
     // Cross-Site Request Forgery.
     csrf: false
-  },
-
-  session: {
-    secret: process.env.SESSION_SECRET
   }
-
 };
